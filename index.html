@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header role="banner">
+            <h1>Weather Dashboard</h1>
+        </header>
+        <main role="main">
+            <form id="search-form">
+                <label for="city-input">City Name:</label>
+                <input type="text" id="city-input" placeholder="Enter a city" aria-label="City Name">
+                <button type="submit" aria-label="Search">Search</button>
+            </form>
+            <section class="weather-section" role="region">
+                <h2>Current Weather</h2>
+                <p>City: <span id="city-name"></span></p>
+                <p>Temperature: <span class="temperature" data-unit="Celsius"></span></p>
+                <p>Humidity: <span id="humidity"></span></p>
+                <p>Wind Speed: <span id="wind-speed"></span></p>
+                <button id="refresh-button">Refresh</button>
+                <div id="error-message" style="display: none;"></div>
+            </section>
+            <section class="forecast-section" role="region">
+                <h2>5-Day Forecast</h2>
+                <!-- Forecast data goes here -->
+            </section>
+        </main>
+        <footer role="contentinfo">
+            <h2>Search History</h2>
+            <ul class="search-history" role="list">
+                <!-- Search history items go here -->
+            </ul>
+            <!-- Add the button for toggling temperature units -->
+            <button id="unit-toggle-button">Toggle Unit</button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
