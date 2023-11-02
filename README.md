@@ -18,3 +18,5 @@ WHEN I view future weather conditions for that city
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
+
+This is my attempt at a weather dashboard. known bugs include weather data not being displayed on the page, but data does come through to the console and search history is properly stored. due to limited time i am submitting what i have. 

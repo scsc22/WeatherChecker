@@ -16,6 +16,7 @@ async function fetchCurrentWeather(cityName) {
       displayError(`Error: ${data.message}`);
     }
   } catch (error) {
+    console.log (error)
     // Handle network errors
     displayError('Network error. Please check your connection.');
   }
@@ -35,6 +36,7 @@ async function fetchTemperatureAndWindSpeed(cityName) {
       displayError(`Error: ${data.message}`);
     }
   } catch (error) {
+    console.log (error)
     // Handle network errors
     displayError('Network error. Please check your connection.');
   }
@@ -42,10 +44,10 @@ async function fetchTemperatureAndWindSpeed(cityName) {
 
 // Function to fetch 24-hour forecast data
 async function fetch24HourForecast(cityName) {
-  try {
+  // try {
     const response = await fetch(`${apiUrl}forecast?q=${cityName}&appid=${apiKey}`);
     const data = await response.json();
-
+  
     if (response.status === 200) {
       // Data retrieval was successful
       display24HourForecast(data);
@@ -53,10 +55,11 @@ async function fetch24HourForecast(cityName) {
       // Handle error
       displayError(`Error: ${data.message}`);
     }
-  } catch (error) {
+  // } catch (error) {
+    console.log (error)
     // Handle network errors
     displayError('Network error. Please check your connection.');
-  }
+  // }
 }
 
 // Function to display current weather data
@@ -82,8 +85,9 @@ function displayTemperatureAndWindSpeed(data) {
 }
 
 // Function to display 24-hour forecast data
+// TODO: fix forecastlistelement in html currently doesnt exist.
 function display24HourForecast(data) {
-  const forecastListElement = document.getElementById('forecast-list');
+  const forecastListElement = document.getElementById('forecast-list'); 
   forecastListElement.innerHTML = ''; // Clear previous data
 
   // Loop through the forecast data and create list items
@@ -96,6 +100,7 @@ function display24HourForecast(data) {
 
 // Function to display an error message
 function displayError(message) {
+  console.log("display error")
   const errorElement = document.getElementById('error-message');
   errorElement.textContent = message;
   errorElement.style.display = 'block';

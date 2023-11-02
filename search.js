@@ -14,6 +14,7 @@ async function fetchCurrentWeather(cityName) {
       displayError(`Error: ${data.message}`);
     }
   } catch (error) {
+    console.log (error)
     displayError('Network error. Please check your connection.');
   }
 }
@@ -30,6 +31,7 @@ async function fetchFiveDayForecast(cityName) {
       displayError(`Error: ${data.message}`);
     }
   } catch (error) {
+    console.log (error)
     displayError('Network error. Please check your connection.');
   }
 }

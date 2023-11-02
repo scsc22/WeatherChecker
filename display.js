@@ -16,6 +16,7 @@ function displayCurrentWeather(data) {
   }
   
   // Function to display 5-day forecast
+  // also TODO: create forecastlistelement on html
   function displayFiveDayForecast(data) {
     const forecastListElement = document.getElementById('forecast-list');
     forecastListElement.innerHTML = '';
